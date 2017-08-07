@@ -1,0 +1,60 @@
+//==============================================================================
+// Variables
+//==============================================================================
+$font-size: 14px;
+$font-weight: bold;
+$width: 200px;
+$height: 40px;
+$padding-y: 0;
+$padding-x: 10px;
+$border-radius: 4px;
+$caret-width: 4;
+$caret-color: #333;
+
+//==============================================================================
+// Base
+//==============================================================================
+.full-css-select{
+  width: $width;
+  height: $height;
+  cursor: pointer;
+  background: #f2f2f2;
+  border-radius: $border-radius;
+  position: relative;
+  border:1px solid #999;
+  transition: all 0.2s;
+  &:after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: $caret-width + px solid transparent;
+    border-right: $caret-width + px solid transparent;
+    border-top: $caret-width + px solid $caret-color;
+    position: absolute;
+    top: 50%;
+    right: $padding-x;
+    margin-top: #{-($caret-width / 2)}px;
+    z-index: 1;
+  }
+  &:hover{
+    border-color: #666;
+  }
+  select{
+    font-family: sans-serif;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    border: none;
+    background: transparent;
+    height: $height;
+    width: 100%;
+    margin: $padding-y $padding-x;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+		-moz-appearance: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+  }
+}
